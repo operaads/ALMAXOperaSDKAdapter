@@ -4,7 +4,7 @@ Custom adapter for integrating Opera Ads SDK with AppLovin MAX mediation platfor
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ALMAXOperaSDKAdapter.svg)](https://cocoapods.org/pods/ALMAXOperaSDKAdapter)
 [![Platform](https://img.shields.io/cocoapods/p/ALMAXOperaSDKAdapter.svg?style=flat)](https://cocoapods.org/pods/ALMAXOperaSDKAdapter)
-[![License](https://img.shields.io/cocoapods/l/ALMAXOperaSDKAdapter.svg?style=flat)](https://github.com/luanchen/ALMAXOperaSDKAdapter/blob/main/LICENSE)
+[![License](https://img.shields.io/cocoapods/l/ALMAXOperaSDKAdapter.svg?style=flat)](https://github.com/operaads/ALMAXOperaSDKAdapter/blob/main/LICENSE)
 
 English | [简体中文](README.MD)
 
@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter is a custom mediation adapter that enables seamless integra
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.8.0+
+- OpAdxSdk 2.8.1
 - Xcode 13.0+
 
 ## Installation
@@ -37,10 +37,10 @@ Add the following to your `Podfile`:
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '~> 2.8.0'
+pod 'OpAdxSdk', '2.8.1'
 
 # Opera Ads AppLovin MAX Adapter
-pod 'ALMAXOperaSDKAdapter', '~> 2.8.1'
+pod 'ALMAXOperaSDKAdapter', '2.8.1.0'
 ```
 
 Then run:
@@ -481,7 +481,7 @@ For complete sample projects, see:
 
 - 📧 Email: chenl@opera.com
 - 📖 Documentation: [Opera Ads iOS SDK Documentation]
-- 🐛 Issue Tracker: [GitHub Issues](https://github.com/luanchen/ALMAXOperaSDKAdapter/issues)
+- 🐛 Issue Tracker: [GitHub Issues](https://github.com/operaads/ALMAXOperaSDKAdapter/issues)
 
 ## License
 

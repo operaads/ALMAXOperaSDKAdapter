@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
     enabling seamless ad serving through the AppLovin MAX platform.
   DESC
 
-  spec.homepage     = "https://github.com/luanchen/ALMAXOperaSDKAdapter"
+  spec.homepage     = "https://github.com/operaads/ALMAXOperaSDKAdapter"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "Opera Ads" => "chenl@opera.com" }
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
 
   # ――― 源码位置 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source       = {
-    :git => "https://github.com/luanchen/ALMAXOperaSDKAdapter.git",
+    :git => "https://github.com/operaads/ALMAXOperaSDKAdapter.git",
     :tag => "#{spec.version}"
   }
 
@@ -47,7 +47,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'AppLovinSDK'
 
   # Opera Ads SDK
-  spec.dependency 'OpAdxSdk', '>= 2.8.0'
+  spec.dependency 'OpAdxSdk', '2.8.1'
 
   # ――― 工程配置 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # 静态库需要 -ObjC 标志以加载 Category

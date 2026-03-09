@@ -4,7 +4,7 @@ Opera Ads SDK 的 AppLovin MAX 聚合平台自定义适配器。
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ALMAXOperaSDKAdapter.svg)](https://cocoapods.org/pods/ALMAXOperaSDKAdapter)
 [![Platform](https://img.shields.io/cocoapods/p/ALMAXOperaSDKAdapter.svg?style=flat)](https://cocoapods.org/pods/ALMAXOperaSDKAdapter)
-[![License](https://img.shields.io/cocoapods/l/ALMAXOperaSDKAdapter.svg?style=flat)](https://github.com/luanchen/ALMAXOperaSDKAdapter/blob/main/LICENSE)
+[![License](https://img.shields.io/cocoapods/l/ALMAXOperaSDKAdapter.svg?style=flat)](https://github.com/operaads/ALMAXOperaSDKAdapter/blob/main/LICENSE)
 
 [English](README_EN.MD) | 简体中文
 
@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.8.0+
+- OpAdxSdk 2.8.1
 - Xcode 13.0+
 
 ## 安装
@@ -37,10 +37,10 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '~> 2.8.0'
+pod 'OpAdxSdk', '2.8.1'
 
 # Opera Ads AppLovin MAX 适配器
-pod 'ALMAXOperaSDKAdapter', '~> 2.8.1'
+pod 'ALMAXOperaSDKAdapter', '2.8.1'
 ```
 
 然后运行：
@@ -481,7 +481,7 @@ A: 确保正确配置了 `MANativeAdView` 的所有视图元素。
 
 - 📧 Email: chenl@opera.com
 - 📖 文档: [Opera Ads iOS SDK 文档]
-- 🐛 问题反馈: [GitHub Issues](https://github.com/luanchen/ALMAXOperaSDKAdapter/issues)
+- 🐛 问题反馈: [GitHub Issues](https://github.com/operaads/ALMAXOperaSDKAdapter/issues)
 
 ## 许可证
 
