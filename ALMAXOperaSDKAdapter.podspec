@@ -36,11 +36,12 @@ Pod::Spec.new do |spec|
   # 制作静态包的关键设置
   spec.static_framework = true
 
+  spec.vendored_frameworks = "OpAdxAdapterAppLovin.xcframework"
   # 源码路径 - Objective-C源文件
-  spec.source_files  = "OpAdxAdapterAppLovin/**/*.{h,m}"
+  #spec.source_files  = "OpAdxAdapterAppLovin/**/*.{h,m}"
 
   # 公开头文件
-  spec.public_header_files = "OpAdxAdapterAppLovin/**/*.h"
+  #spec.public_header_files = "OpAdxAdapterAppLovin/**/*.h"
 
   # --- 依赖项 ---
   # AppLovin SDK
@@ -51,12 +52,12 @@ Pod::Spec.new do |spec|
 
   # ――― 工程配置 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # 静态库需要 -ObjC 标志以加载 Category
-  spec.pod_target_xcconfig = {
-    'OTHER_LDFLAGS' => '-ObjC',
-    'VALID_ARCHS' => 'arm64 x86_64'
-  }
+  # spec.pod_target_xcconfig = {
+  #   'OTHER_LDFLAGS' => '-ObjC',
+  #   'VALID_ARCHS' => 'arm64 x86_64'
+  # }
 
   # ――― 元数据 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.requires_arc = true
+  # spec.requires_arc = true
 
 end
