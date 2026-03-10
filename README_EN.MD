@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter is a custom mediation adapter that enables seamless integra
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.8.1
+- OpAdxSdk 2.8.2
 - Xcode 13.0+
 
 ## Installation
@@ -37,10 +37,10 @@ Add the following to your `Podfile`:
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '2.8.1'
+pod 'OpAdxSdk', '2.8.2'
 
 # Opera Ads AppLovin MAX Adapter
-pod 'ALMAXOperaSDKAdapter', '2.8.1.0'
+pod 'ALMAXOperaSDKAdapter', '2.8.2.0'
 ```
 
 Then run:
@@ -91,14 +91,12 @@ When configuring ad units in AppLovin MAX dashboard:
 - Native: `OpAdxAppLovinNativeAdapter`
 
 **App ID**: Your Opera App ID
+e.g.: pub134xxxxxxxxxxx/ep13xxxxxxxxxxxx/app14xxxxxxxxxxxx
+
 
 **Custom Parameters** - JSON format:
 ```json
-{
-  "app_id": "your_opera_app_id",
-  "bundle_id": "your_bundle_id",
-  "placement_id": "your_opera_placement_id"
-}
+{"bundleId": "your_bundle_id"}
 ```
 
 ### 3. Load and Show Ads
@@ -348,45 +346,6 @@ Use AppLovin MAX standard APIs to load and show ads:
 @end
 ```
 
-## Adapter Architecture
-
-### Core Components
-
-```
-OpAdxAdapterAppLovin/
-├── AdapterVersion.h                     # Adapter version
-├── OpAdxAppLovinAdapter.h               # Main adapter class
-├── OpAdxAppLovinAdapter.m
-├── OpAdxAppLovinAdapterError.h          # Error definitions
-├── OpAdxAppLovinAdapterError.m
-├── OpAdxAppLovinExtras.h                # Extra parameters
-├── OpAdxAppLovinExtras.m
-├── OpAdxAppLovinAdViewAdapter.h         # Banner adapter
-├── OpAdxAppLovinAdViewAdapter.m
-├── OpAdxAppLovinInterstitialAdapter.h   # Interstitial adapter
-├── OpAdxAppLovinInterstitialAdapter.m
-├── OpAdxAppLovinRewardedAdapter.h       # Rewarded adapter
-├── OpAdxAppLovinRewardedAdapter.m
-├── OpAdxAppLovinNativeAdapter.h         # Native adapter
-├── OpAdxAppLovinNativeAdapter.m
-├── OpAdxAppLovinNativeAd.h              # Native ad object
-├── OpAdxAppLovinNativeAd.m
-├── OpAdxNativeAdView.h                  # Native ad view
-└── OpAdxNativeAdView.m
-```
-
-### Callback Mapping
-
-| Opera Ads SDK Callback | AppLovin MAX Callback |
-|------------------------|----------------------|
-| `onAdLoaded` | `didLoadAdapter:` |
-| `onAdFailedToLoad` | `didFailToLoadAdapterWithError:` |
-| `onAdDisplayed` | `didDisplayAd:` |
-| `onAdClicked` | `didClickAd:` |
-| `onAdClosed` | `didHideAd:` |
-| `onAdFailedToShow` | `didFailToDisplayAd:withError:` |
-| `didRewardUserWithItem:` | `didRewardUserForAd:withReward:` |
-
 ### Native Ad Features
 
 The adapter uses `OpAdxNativeAdView` to render native ads, including the following components:
@@ -399,7 +358,7 @@ The adapter uses `OpAdxNativeAdView` to render native ads, including the followi
 
 ## Release Notes
 
-### 2.8.1.0 (2026-03-09)
+### 2.8.2.0 (2026-03-10)
 - ✅ Support for AppLovin SDK 12.0+
 - ✅ Fixed native ad MediaView type preservation issue
 - ✅ Fixed rewarded ad to use actual reward data

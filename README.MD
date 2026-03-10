@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.8.1
+- OpAdxSdk 2.8.2
 - Xcode 13.0+
 
 ## 安装
@@ -37,10 +37,10 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '2.8.1'
+pod 'OpAdxSdk', '2.8.2'
 
 # Opera Ads AppLovin MAX 适配器
-pod 'ALMAXOperaSDKAdapter', '2.8.1'
+pod 'ALMAXOperaSDKAdapter', '2.8.2.0'
 ```
 
 然后运行：
@@ -90,15 +90,12 @@ pod install
 - Rewarded: `OpAdxAppLovinRewardedAdapter`
 - Native: `OpAdxAppLovinNativeAdapter`
 
-**App ID**：您的 Opera App ID
+**App ID**：您的 Opera App ID 
+例如: pub134xxxxxxxxxxx/ep13xxxxxxxxxxxx/app14xxxxxxxxxxxx
 
 **自定义参数（Custom Parameters）** - JSON格式：
 ```json
-{
-  "app_id": "your_opera_app_id",
-  "bundle_id": "your_bundle_id",
-  "placement_id": "your_opera_placement_id"
-}
+{"bundleId": "your_bundle_id"}
 ```
 
 ### 3. 加载和展示广告
@@ -348,45 +345,6 @@ pod install
 @end
 ```
 
-## 适配器架构
-
-### 核心组件
-
-```
-OpAdxAdapterAppLovin/
-├── AdapterVersion.h                     # 适配器版本号
-├── OpAdxAppLovinAdapter.h               # 主适配器类
-├── OpAdxAppLovinAdapter.m
-├── OpAdxAppLovinAdapterError.h          # 错误定义
-├── OpAdxAppLovinAdapterError.m
-├── OpAdxAppLovinExtras.h                # 扩展参数
-├── OpAdxAppLovinExtras.m
-├── OpAdxAppLovinAdViewAdapter.h         # Banner适配器
-├── OpAdxAppLovinAdViewAdapter.m
-├── OpAdxAppLovinInterstitialAdapter.h   # Interstitial适配器
-├── OpAdxAppLovinInterstitialAdapter.m
-├── OpAdxAppLovinRewardedAdapter.h       # Rewarded适配器
-├── OpAdxAppLovinRewardedAdapter.m
-├── OpAdxAppLovinNativeAdapter.h         # Native适配器
-├── OpAdxAppLovinNativeAdapter.m
-├── OpAdxAppLovinNativeAd.h              # Native广告对象
-├── OpAdxAppLovinNativeAd.m
-├── OpAdxNativeAdView.h                  # Native广告视图
-└── OpAdxNativeAdView.m
-```
-
-### 回调映射
-
-| Opera Ads SDK 回调 | AppLovin MAX 回调 |
-|-------------------|------------------|
-| `onAdLoaded` | `didLoadAdapter:` |
-| `onAdFailedToLoad` | `didFailToLoadAdapterWithError:` |
-| `onAdDisplayed` | `didDisplayAd:` |
-| `onAdClicked` | `didClickAd:` |
-| `onAdClosed` | `didHideAd:` |
-| `onAdFailedToShow` | `didFailToDisplayAd:withError:` |
-| `didRewardUserWithItem:` | `didRewardUserForAd:withReward:` |
-
 ### 原生广告特性
 
 适配器使用 `OpAdxNativeAdView` 来呈现原生广告，包含以下组件：
@@ -399,7 +357,7 @@ OpAdxAdapterAppLovin/
 
 ## 版本历史
 
-### 2.8.1.0 (2026-03-09)
+### 2.8.2.0 (2026-03-10)
 - ✅ 支持 AppLovin SDK 12.0+
 - ✅ 修复原生广告 MediaView 类型保留问题
 - ✅ 修复激励广告奖励回调使用实际奖励数据
@@ -458,7 +416,7 @@ AppLovin MAX 提供测试模式：
 
 **Q: 广告无法加载？**
 A: 检查以下项：
-1. AppLovin MAX 后台自定义网络配置是否正确
+1. AppLovin MAX 后台自定义网络配置是否正确,尤其是bundleId
 2. 适配器类名是否正确设置
 3. Opera Ads SDK 是否成功初始化
 4. 查看日志中的详细错误信息
