@@ -7,6 +7,6 @@ platform :ios, '13.0'
 target 'AppLovinDemo_oc' do
   pod 'AppLovinSDK'
   pod 'Adjust'
-  pod 'OpAdxSdk', '2.8.2'
-  pod 'ALMAXOperaSDKAdapter', '2.8.2.0'
+  pod 'OpAdxSdk', '2.8.3'
+  pod 'ALMAXOperaSDKAdapter', '2.8.3.1'
 end
