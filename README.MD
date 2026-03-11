@@ -40,7 +40,7 @@ pod 'AppLovinSDK'
 pod 'OpAdxSdk', '2.8.3'
 
 # Opera Ads AppLovin MAX 适配器
-pod 'ALMAXOperaSDKAdapter', '2.8.3.0'
+pod 'ALMAXOperaSDKAdapter', '2.8.3.1'
 ```
 
 然后运行：
@@ -362,7 +362,7 @@ your_opera_placement_id
 
 ## 版本历史
 
-### 2.8.3.0 (2026-03-11)
+### 2.8.3.1 (2026-03-11)
 - 使用xcode(16.2)编译,提高兼容性
 
 ### 2.8.2.0 (2026-03-10)
