@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   # ――― 基本信息 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "ALMAXOperaSDKAdapter"
-  spec.version      = "2.8.2.0"
+  spec.version      = "2.8.3.0"
   spec.summary      = "Opera Ads Custom Adapter for AppLovin MAX Mediation Platform."
   spec.description  = <<-DESC
     ALMAXOperaSDKAdapter is a custom mediation adapter that enables the integration of
@@ -24,6 +24,8 @@ Pod::Spec.new do |spec|
   # ――― 平台设置 ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.platform     = :ios, "13.0"
   spec.ios.deployment_target = "13.0"
+  spec.swift_version = "5.0"
+
 
   # ――― 源码位置 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source       = {
