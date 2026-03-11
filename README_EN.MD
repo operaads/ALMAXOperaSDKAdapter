@@ -76,28 +76,33 @@ pod install
 
 When configuring ad units in AppLovin MAX dashboard:
 
-1. Select "Manage" → "Networks"
-2. Click "Click here to add a Custom Network"
-3. Configure custom network parameters:
-
-**Network Type**: SDK
-
-**Custom Network Name**: Opera Ads
+1. Select "Manage" -> "Networks"
+2. Configure iOS Adapter Class Name
+3. Enter OpAdxAppLovinAdapter
 
 **iOS Adapter Class Name**:
-- Banner: `OpAdxAppLovinAdViewAdapter`
-- Interstitial: `OpAdxAppLovinInterstitialAdapter`
-- Rewarded: `OpAdxAppLovinRewardedAdapter`
-- Native: `OpAdxAppLovinNativeAdapter`
+`OpAdxAppLovinAdapter`
+
+4. Return and select "Ad Units"
+5. Create a new ad unit or select an existing one
+6. Custom Networks -> Click the Custom Network configured above
+7. Configure App ID/Placement ID/Custom Parameters and other settings
+8. Save
 
 **App ID**: Your Opera App ID
-e.g.: pub134xxxxxxxxxxx/ep13xxxxxxxxxxxx/app14xxxxxxxxxxxx
+your_opera_app_id
+Example: pub134xxxxxxxxxxx/ep13xxxxxxxxxxxx/app14xxxxxxxxxxxx
 
+**Placement ID**: Your Opera Placement ID
+your_opera_placement_id
+Example: s1xxxxxxxxxxxxx
 
 **Custom Parameters** - JSON format:
 ```json
 {"bundleId": "your_bundle_id"}
 ```
+Example: {"bundleId": "xxxxxxxxxx"} 
+The digital ID of the app in the Apple Store
 
 ### 3. Load and Show Ads
 
@@ -356,15 +361,15 @@ The adapter uses `OpAdxNativeAdView` to render native ads, including the followi
 - Call to Action
 - Ad Choices
 
-## Release Notes
+## Version History
 
 ### 2.8.2.0 (2026-03-10)
 - ✅ Support for AppLovin SDK 12.0+
 - ✅ Fixed native ad MediaView type preservation issue
-- ✅ Fixed rewarded ad to use actual reward data
-- ✅ Added banner ad lifecycle callbacks
-- ✅ Improved error handling and logging
-- ✅ Support for all mainstream ad formats
+- ✅ Fixed rewarded ad reward callback to use actual reward data
+- ✅ Added Banner ad lifecycle callbacks
+- ✅ Optimized error handling and logging
+- ✅ Support for all major ad formats
 
 ### 2.8.0.0
 - Initial release
@@ -392,51 +397,35 @@ Native ads use AppLovin's `MANativeAdView` for rendering. The adapter automatica
 ### 4. Error Handling
 All errors are returned through AppLovin MAX's standard error callbacks with detailed error information.
 
-## Debugging
-
-### Enable Logging
-
-```objective-c
-// AppLovin MAX logging
-[[ALSdk shared] getSettings].isVerboseLoggingEnabled = YES;
-
-// Opera Ads SDK logging (set before SDK initialization)
-// See OpAdxSdk documentation for details
-```
-
-### Test Ads
-
-AppLovin MAX provides test mode:
-
-```objective-c
-// Enable test mode after initialization
-[[ALSdk shared] showMediationDebugger];
-```
 
 ### Common Issues
 
 **Q: Ads not loading?**
 A: Check the following:
-1. Verify custom network configuration in AppLovin MAX dashboard
-2. Ensure adapter class names are correctly set
-3. Verify Opera Ads SDK is successfully initialized
-4. Review detailed error messages in logs
+1. Verify custom network configuration in AppLovin MAX dashboard, especially bundleId
+2. Ensure adapter class name is correctly set
+3. Ensure Opera Ads SDK is successfully initialized
+4. Check console logs for detailed error messages
 
 **Q: Adapter class not found?**
 A: Make sure:
 1. `ALMAXOperaSDKAdapter` Pod is correctly installed
-2. Use full class name, e.g., `OpAdxAppLovinAdViewAdapter`
-3. Clean and rebuild project
+2. Class name is configured on the website
+3. Use the full class name, e.g., `OpAdxAppLovinAdViewAdapter`
+4. Clean and rebuild your project
 
 **Q: Native ad not displaying correctly?**
 A: Ensure all view elements of `MANativeAdView` are properly configured.
 
+**Q: No App Open ads?**
+A: AppLovin currently does not support App Open ads in waterfall mediation.
+
 ## Sample Project
 
-For complete sample projects, see:
+For a complete sample project, see:
 - [OpAdxSDK Demo - AppLovin Adapter](https://github.com/operaads/iOS-sdk/tree/main/Demo/ApplovinAdapter)
 
-## Support
+## Technical Support
 
 - 📧 Email: chenl@opera.com
 - 📖 Documentation: [Opera Ads iOS SDK Documentation]
@@ -444,7 +433,7 @@ For complete sample projects, see:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) file for details.
 
 ## Related Links
 

@@ -76,27 +76,32 @@ pod install
 
 在 AppLovin MAX 后台配置广告单元时：
 
-1. 选择"Manage" → "Networks"
-2. 点击"Click here to add a Custom Network"
-3. 配置自定义网络参数：
-
-**网络类型（Network Type）**：SDK
-
-**自定义网络名称（Custom Network Name）**：Opera Ads
+1. 选择"Manage" -> "Networks"
+2. 配置iOS Adapter Class Name
+3. 填入OpAdxAppLovinAdapter
 
 **iOS 适配器类名（iOS Adapter Class Name）**：
-- Banner: `OpAdxAppLovinAdViewAdapter`
-- Interstitial: `OpAdxAppLovinInterstitialAdapter`
-- Rewarded: `OpAdxAppLovinRewardedAdapter`
-- Native: `OpAdxAppLovinNativeAdapter`
+`OpAdxAppLovinAdapter`
+
+4. 返回并选择"Ad Units"
+5. 新增或选中一个广告单元
+6. Custom Networks -> 点击刚才配置的Custom Networks
+7. 配置App ID/Placement ID/Custom Parameters和其他配置
+8. 保存
 
 **App ID**：您的 Opera App ID 
+your_opera_app_id
 例如: pub134xxxxxxxxxxx/ep13xxxxxxxxxxxx/app14xxxxxxxxxxxx
+
+**Placement ID**：您的 Opera Placement ID 
+your_opera_placement_id
+例如: s1xxxxxxxxxxxxx
 
 **自定义参数（Custom Parameters）** - JSON格式：
 ```json
 {"bundleId": "your_bundle_id"}
 ```
+例如: {"bundleId": "xxxxxxxx"} app在苹果商店的数字id
 
 ### 3. 加载和展示广告
 
@@ -391,26 +396,6 @@ AppLovin SDK 必须在加载广告之前初始化完成。
 ### 4. 错误处理
 所有错误都会通过 AppLovin MAX 的标准错误回调返回，包含详细的错误信息。
 
-## 调试
-
-### 启用日志
-
-```objective-c
-// AppLovin MAX 日志
-[[ALSdk shared] getSettings].isVerboseLoggingEnabled = YES;
-
-// Opera Ads SDK 日志（在 SDK 初始化前设置）
-// 详见 OpAdxSdk 文档
-```
-
-### 测试广告
-
-AppLovin MAX 提供测试模式：
-
-```objective-c
-// 在初始化后启用测试模式
-[[ALSdk shared] showMediationDebugger];
-```
 
 ### 常见问题
 
@@ -424,11 +409,15 @@ A: 检查以下项：
 **Q: 适配器类名找不到？**
 A: 确保：
 1. `ALMAXOperaSDKAdapter` Pod 已正确安装
-2. 使用完整类名，例如 `OpAdxAppLovinAdViewAdapter`
-3. 清理并重新构建项目
+2. 已在网站上配置类名
+3. 使用完整类名，例如 `OpAdxAppLovinAdViewAdapter`
+4. 清理并重新构建项目
 
 **Q: 原生广告显示不正确？**
 A: 确保正确配置了 `MANativeAdView` 的所有视图元素。
+
+**Q: 没有开屏广告？**
+A: AppLovin暂时不支持waterfall的开屏广告。
 
 ## 示例项目
 
