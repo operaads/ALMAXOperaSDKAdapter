@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter is a custom mediation adapter that enables seamless integra
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.8.3
+- OpAdxSdk 2.9.1
 - Xcode 13.0+
 
 ## Installation
@@ -37,10 +37,10 @@ Add the following to your `Podfile`:
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '2.8.3'
+pod 'OpAdxSdk', '2.9.1'
 
 # Opera Ads AppLovin MAX Adapter
-pod 'ALMAXOperaSDKAdapter', '2.8.3.0'
+pod 'ALMAXOperaSDKAdapter', '2.9.1.0'
 ```
 
 Then run:
@@ -362,6 +362,9 @@ The adapter uses `OpAdxNativeAdView` to render native ads, including the followi
 - Ad Choices
 
 ## Version History
+
+### 2.9.1.0 (2026-04-08)
+- Upgraded OpAdxSdk dependency to 2.9.1
 
 ### 2.8.3.0 (2026-03-11)
 - Compiled using Xcode (16.2) to enhance compatibility
