@@ -25,11 +25,11 @@ static NSString *const YOUR_SDK_KEY = @"EuRmGOTtSXTgK_H0PU84px1Ht14S3RPTGXvDm_yR
         builder.mediationProvider = ALMediationProviderMAX;
         
         // Enable test mode by default for the current device.
-//        NSString *currentIDFV = UIDevice.currentDevice.identifierForVendor.UUIDString;
-//        if ( currentIDFV.length > 0 )
-//        {
-//            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];
-//        }
+        NSString *currentIDFV = UIDevice.currentDevice.identifierForVendor.UUIDString;
+        if ( currentIDFV.length > 0 )
+        {
+            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];
+        }
     }];
 
     // Initialize the SDK with the configuration
