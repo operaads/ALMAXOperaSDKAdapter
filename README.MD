@@ -23,7 +23,7 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 
 - iOS 13.0+
 - AppLovin SDK 12.0.0+
-- OpAdxSdk 2.11.2
+- OpAdxSdk 2.12.0
 - Xcode 16.0+
 
 ## 安装
@@ -37,10 +37,10 @@ ALMAXOperaSDKAdapter 是一个自定义聚合适配器，使 Opera Advertising S
 pod 'AppLovinSDK'
 
 # Opera Ads SDK
-pod 'OpAdxSdk', '2.11.2'
+pod 'OpAdxSdk', '2.12.0'
 
 # Opera Ads AppLovin MAX 适配器
-pod 'ALMAXOperaSDKAdapter', '2.11.2.0'
+pod 'ALMAXOperaSDKAdapter', '2.12.0.0'
 ```
 
 然后运行：
@@ -361,6 +361,9 @@ your_opera_placement_id
 - 广告选择图标（Ad Choices）
 
 ## 版本历史
+
+### 2.12.0.0 (2026-07-31)
+- 升级依赖 OpAdxSdk 至 2.12.0
 
 ### 2.11.2.0 (2026-06-30)
 - 升级依赖 OpAdxSdk 至 2.11.2
